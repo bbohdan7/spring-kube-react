@@ -10,7 +10,8 @@ class UserService {
         return http.get(`/users/${id}`)
     }
     
-    create(id, usr) {
+    create(usr) {
+        console.log(`User to be created is ${JSON.stringify(usr)}`)
         return http.post('users', usr)
     }
 
