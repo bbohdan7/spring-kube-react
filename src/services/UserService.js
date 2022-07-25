@@ -1,22 +1,22 @@
-import http from './http-commons'
+//import http from './http-commons'
+import axios from 'axios'
 
 class UserService {
 
     all() {
-        return http.get('/users')
+        return axios.get('/api/users')
     }
 
     find(id) {
-        return http.get(`/users/${id}`)
+        return axios.get(`/api/users/${id}`)
     }
     
     create(usr) {
-        console.log(`User to be created is ${JSON.stringify(usr)}`)
-        return http.post('users', usr)
+        return axios.post('/api/users', usr)
     }
 
     update(id, usr) {
-        return http.put(`/users/${id}`, usr)
+        return axios.put(`/api/users/${id}`, usr)
     }
 
 }
